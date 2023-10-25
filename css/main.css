@@ -1,0 +1,99 @@
+body {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+/*Text*/
+
+h1 {
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 30pt;
+    text-align: center;
+}
+
+/*Boxes/Containers*/
+
+.videoPlayer {
+    width: 80%;
+    height: 80%;
+    border: 3px solid black;
+    border-radius: 12px;
+}
+
+.videoContainer {
+    text-align: center;
+}
+
+/*Buttons*/
+
+button {
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 10pt;
+    background-color: #089eef;
+    color: white;
+    height: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 1.5px;
+}
+
+button:active {
+    background-color: #d43cc0;
+    box-shadow: 0 2px #666;
+    transform: translateY(1px);
+  }
+
+.intbuttons {
+    width: 21%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 12px;
+}
+
+.playbackbuttons {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 12px;
+}
+
+.startendbuttons {
+    width: 12%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 12px;
+}
+
+.playBtnSize {
+    width: 48px;
+}
+
+/*Grid*/
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 55rem;
+}
+
+.lgridoutline {
+    border: 2px black solid;
+    border-radius: 12px;
+}
+
+.rgridoutline {
+    width: 100%;
+    height: 100%;
+    background-color: #089eef;
+    border: 2px black solid;
+    border-radius: 12px;
+}
