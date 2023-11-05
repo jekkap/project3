@@ -16,62 +16,113 @@ function init() {
     const fastForward = document.getElementById("ffBtn");
     const slowMotion = document.getElementById("slowMoBtn");
     const begin = document.getElementById("beginBtn");
-    const end = document.getElementById("endBtn")
-
-    play.addEventListener("click", playVideo);
-    pause.addEventListener("click", pauseVideo);
-    mute.addEventListener("click", muteVideo);
-    unmute.addEventListener("click", unmuteVideo);
-    nrmlSpd.addEventListener("click", nrmlSpdVideo);
-    fastForward.addEventListener("click", fastForwardVideo);
-    slowMotion.addEventListener("click", slowMotionVideo);
-    begin.addEventListener("click", beginVideo);
-    end.addEventListener("click", endVideo);
-
-}
-
-
-function playVideo() {
+    const end = document.getElementById("endBtn");
     const videoPlayer = document.querySelector(".videoPlayer");
-    videoPlayer.play();
+
+    play.addEventListener("click", (e) => {
+        videoPlayer.play();
+    });
+
+    pause.addEventListener("click", (e) => {
+        videoPlayer.pause();
+    });
+
+    mute.addEventListener("click", (e) => {
+        videoPlayer.muted = true;
+    });
+
+    unmute.addEventListener("click", (e) => {
+        videoPlayer.muted = false;
+    });
+
+    nrmlSpd.addEventListener("click", (e) => {
+        videoPlayer.playbackRate = 1;
+    });
+
+    fastForward.addEventListener("click", (e) => {
+        videoPlayer.playbackRate = 2;
+    });
+
+    slowMotion.addEventListener("click", (e) => {
+        videoPlayer.playbackRate = 0.5;
+    });
+
+    begin.addEventListener("click", (e) => {
+        videoPlayer.currentTime = 0;
+    });
+
+    end.addEventListener("click", (e) => {
+        videoPlayer.currentTime = 100;
+    });
+
+    videoPlayer.addEventListener("timeupdate", (e) => {
+
+    });
 }
 
-function pauseVideo() {
-    const videoPlayer = document.querySelector(".videoPlayer");
-    videoPlayer.pause();
-}
+//Adds functionailty to right grid for cuepoints
+const videoPlayer = document.querySelector(".videoPlayer")
+const rGridDiv = document.createElement("div");
+const rightGrid = document.querySelector(".rightGrid");
+rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/questionmark.png"></div>';
+rightGrid.append(rGridDiv);
 
-function muteVideo() {
-    const videoPlayer = document.querySelector(".videoPlayer");
-    videoPlayer.muted = true;
-}
+videoPlayer.addEventListener("timeupdate", (e) => {
 
-function unmuteVideo() {
-    const videoPlayer = document.querySelector(".videoPlayer");
-    videoPlayer.muted = false;
-}
+    if (videoPlayer.currentTime === 0) {
+    rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/questionmark.png"></div>';
+    rightGrid.append(rGridDiv);
+    } 
 
-function nrmlSpdVideo() {
-    const videoPlayer = document.querySelector(".videoPlayer");
-    videoPlayer.playbackRate = 1;
-}
+    if (videoPlayer.currentTime > 9) {
+        rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/landfill.png"></div>';
+        rightGrid.append(rGridDiv);
+    }
 
-function fastForwardVideo() {
-    const videoPlayer = document.querySelector(".videoPlayer");
-    videoPlayer.playbackRate = 2;
-}
+    if (videoPlayer.currentTime > 15) {
+        rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/cells.webp"></div>';
+        rightGrid.append(rGridDiv);
+    }
 
-function slowMotionVideo() {
-    const videoPlayer = document.querySelector(".videoPlayer");
-    videoPlayer.playbackRate = 0.5;
-}
+    if (videoPlayer.currentTime > 20) {
+        rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/marriage.jpg"></div>';
+        rightGrid.append(rGridDiv);
+    }
 
-function beginVideo() {
-    const videoPlayer = document.querySelector(".videoPlayer");
-    videoPlayer.currentTime = 0;
-}
+    if (videoPlayer.currentTime > 26) {
+        rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/baby.jpg"></div>';
+        rightGrid.append(rGridDiv);
+    }
 
-function endVideo() {
-    const videoPlayer = document.querySelector(".videoPlayer");
-    videoPlayer.currentTime = 100;
-}
+    if (videoPlayer.currentTime > 28) {
+        rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/neurons.webp"></div>';
+        rightGrid.append(rGridDiv);
+    }
+
+    if (videoPlayer.currentTime > 32) {
+        rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/quadrillion.jpg"></div>';
+        rightGrid.append(rGridDiv);
+    }
+
+    if (videoPlayer.currentTime > 35) {
+        rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/water.webp"></div>';
+        rightGrid.append(rGridDiv);
+    }
+
+    if (videoPlayer.currentTime > 43) {
+        rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/energy.jpg"></div>';
+        rightGrid.append(rGridDiv);
+    }
+
+    if (videoPlayer.currentTime > 50) {
+        rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/solarsystem.png"></div>';
+        rightGrid.append(rGridDiv);
+    }
+
+    if (videoPlayer.currentTime > 55) {
+        rGridDiv.innerHTML = '<div><img class="cuepointImg" src="images/asapscience.jpeg"></div>';
+        rightGrid.append(rGridDiv);
+    }
+})
+
+
